@@ -24,6 +24,9 @@ workflows:
           include: true
           source: true
     scripts:
+      - name: install cocapod
+        script: |
+          sudo gem install cocoapods
       - name: Repo update
         script: |
           pod repo update
