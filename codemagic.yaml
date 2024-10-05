@@ -3,8 +3,6 @@ workflows:
     name: iOS automatic code signing
     instance_type: mac_mini_m2
     working_directory: ios/ios-automatic-code-signing-demo-project
-    pod repo update
-    pod install
     environment:
       groups:
          - ios
@@ -26,6 +24,9 @@ workflows:
           include: true
           source: true
     scripts:
+      - name: Repo update
+        script: |
+          pod repo update
       - name: Install pods
         script: |
           pod install
